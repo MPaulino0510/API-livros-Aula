@@ -2,6 +2,28 @@ opencollection: 1.0.0
 
 info:
   name: API livros
+config:
+  proxy:
+    inherit: true
+    config:
+      protocol: http
+      hostname: ""
+      port: ""
+      auth:
+        username: ""
+        password: ""
+      bypassProxy: ""
+
+request:
+  scripts:
+    - type: before-request
+      code: |-
+        console.log("Hello, world");
+        function somar(a, b){
+          return a + b;
+        }
+        resultado = somar(3, 3);
+        console.log(resultado);
 bundled: false
 extensions:
   bruno:

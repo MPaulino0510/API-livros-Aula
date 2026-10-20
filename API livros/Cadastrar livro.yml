@@ -4,8 +4,16 @@ info:
   seq: 1
 
 http:
-  method: POST
+  method: GET
   url: http://localhost:3000/livros
+  body:
+    type: json
+    data: |-
+      {
+        "titulo": "Crítica a razão pura",
+        "descricao": "Livro de filosofia",
+        "autor": "Kant"
+      }
   auth: inherit
 
 settings:
