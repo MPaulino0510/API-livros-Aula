@@ -2,7 +2,7 @@ import express from 'express';
 import dotenv from 'dotenv';
 import conectarBanco from './db.js';
 dotenv.config();
-BigInt.prototype.toJSON = function () { return Number(this); };
+
 const app = express();
 app.use(express.json());
 app.use(express.static('./public'));
@@ -27,7 +27,7 @@ app.post("/livros", async (req, res)=>{
         autor
     ]);
     res.status(201).json({
-        id: resposta.insertId,
+        id: Number(resposta.insertId),
         mensagem: "Livro cadastrado com sucesso!"
     });
 });
